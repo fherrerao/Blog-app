@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'PostsController', type: :request do
-  describe 'Index action' do    
+  describe 'Index action' do
     before(:example) { get user_posts_path(1) }
 
     it 'returns a 200 status code' do
@@ -10,7 +10,7 @@ RSpec.describe 'PostsController', type: :request do
 
     it 'render the index template' do
       expect(response).to render_template('index')
-    end   
+    end
 
     it 'body should contain the title of the post' do
       expect(response.body).to include('Here is a list of posts for a given user')
