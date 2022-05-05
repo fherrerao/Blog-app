@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user
+  belongs_to :author, class_name: 'User'
   has_many :likes
   has_many :comments
 
@@ -9,7 +9,7 @@ class Post < ApplicationRecord
     author.increment!(:posts_counter)
   end
 
-  def most_recent_post
+  def most_recent_comments
     comments.order(created_at: :desc).limit(5)
   end
 
