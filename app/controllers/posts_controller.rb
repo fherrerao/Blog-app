@@ -6,6 +6,6 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.find(params[:id])
-    @user_posts = @posts.most_recent_post
+    @user_posts = @posts.most_recent_comments
   end
 end

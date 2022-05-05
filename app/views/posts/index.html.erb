@@ -6,7 +6,7 @@
     <% @post.each do |post| %>
       <div class = 'border'>
         <p> <%= post.text %> </p>
-        <p> <% post.most_recent_post.each do |comment| %> 
+        <p> <% post.most_recent_comments.each do |comment| %> 
           <p> <%= @user.name%>: <%= comment.text %>  </p>
         <% end %>
         </p>
