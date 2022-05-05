@@ -1,1 +1,21 @@
-<h1>Here is a user</h1>
+<div class = 'container'>  
+  <h1>Posts of <%= @posts.name %></h1>
+  <h3 class = 'border'> <%= @posts.name %> <br></h3>
+  <p class = 'border'> <span> Bio </span> <br> <%= @posts.bio %> </p>
+
+  <% @user_posts.each do |post| %>    
+    <div class = 'border d-flex justify-content-between align-items-center'> 
+      <div>
+        <p>Post# <%= post.id %></p>
+        
+        <p> <%= @posts.name %>:  
+        <%= link_to user_post_path(post.author_id, post.id) do %>
+          <%= post.text %> </p>
+        <% end %>        
+      </div>      
+      <p> Comments:  <%= post.comments_counter %> Likes: </p>      
+    </div>
+  <% end %>
+
+  <button><%= link_to ("See all posts"),user_posts_path(@posts.id) %></button>
+</div>
