@@ -1,1 +1,11 @@
-<h1>Here is a post given a user</h1>
+<div class = 'container'>
+  <h1>Comments to <%= @posts.author.name%>'s post </h1>
+  <div class = 'border'>
+    <p>Post #<%= @posts.id %> by: <%= @posts.author.name%> </p>
+    <p> <%= @posts.text%> </p>
+  </div>  
+  
+  <% @user_posts.each do |post| %>    
+    <p class = 'border'> <%= @posts.author.name%>:  <%= post.text %></p>
+  <% end %>
+</div>
