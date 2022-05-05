@@ -1,1 +1,18 @@
-<h1>Here is a list of posts for a given user</h1>
+ <div class = 'container'> 
+    <h1>Post and comments of <%= @user.name%></h1> 
+
+    <p class = 'border'> <%= @user.name%></p>
+
+    <% @post.each do |post| %>
+      <div class = 'border'>
+        <p> <%= post.text %> </p>
+        <p> <% post.most_recent_post.each do |comment| %> 
+          <p> <%= @user.name%>: <%= comment.text %>  </p>
+        <% end %>
+        </p>
+      </div>   
+      
+    <% end %>
+ </div>
+ 
+ 
