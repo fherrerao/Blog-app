@@ -1,11 +1,21 @@
 <div class = 'container'>
   <h1>Comments to <%= @posts.author.name%>'s post </h1>
-  <div class = 'border'>
-    <p>Post #<%= @posts.id %> by: <%= @posts.author.name%> </p>
-    <p> <%= @posts.text%> </p>
+  <div class = 'border d-flex justify-content-between'>
+    <div>
+      <p>Post #<%= @posts.id %> by: <%= @posts.author.name%> </p>
+      <p> <%= @posts.text%> </p>
+    </div>
+    <div>
+      <p> Likes: <%= @posts.likes_counter%></p>
+      <%= form_with(model: Like.new, url: post_likes_path(@posts), method: :post ) do |f| %>    
+        <%= f.submit "Like" %>    
+      <% end %>
+    </div>    
   </div>  
   
   <% @user_posts.each do |post| %>    
     <p class = 'border'> <%= @posts.author.name%>:  <%= post.text %></p>
   <% end %>
+
+  <button> <%= link_to 'Add comment', new_post_comment_path(@posts) %> </button>  
 </div>
