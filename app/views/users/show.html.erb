@@ -1,5 +1,8 @@
 <div class = 'container'>  
-  <h1>Posts of <%= @posts.name %></h1>
+  <h1>Posts of <%= @posts.name %></h1>   
+
+  <button class= "button"><%=link_to "Add new post", new_user_post_path(@posts.id) %></button>
+  
   <h3 class = 'border'> <%= @posts.name %> <br></h3>
   <p class = 'border'> <span> Bio </span> <br> <%= @posts.bio %> </p>
 
@@ -13,7 +16,7 @@
           <%= post.text %> </p>
         <% end %>        
       </div>      
-      <p> Comments:  <%= post.comments_counter %> Likes: </p>      
+      <p> Comments:  <%= post.comments_counter %> Likes: <%= post.likes_counter%> </p>
     </div>
   <% end %>
 
