@@ -3,9 +3,23 @@
   <div class = 'border'>
     <p>Post #<%= @posts.id %> by: <%= @posts.author.name%> </p>
     <p> <%= @posts.text%> </p>
+    <p> Likes: <%= @posts.likes_counter%></p>
+    
+    <%= form_with(model: Like.new, url: post_likes_path(@posts), method: :post ) do |f| %>    
+      <%= f.submit "Like" %>    
+    <% end %>
   </div>  
   
   <% @user_posts.each do |post| %>    
     <p class = 'border'> <%= @posts.author.name%>:  <%= post.text %></p>
+  <% end %>
+
+  <div>
+    <%= form_with(model: Comment.new, url: post_comments_path(@posts), method: :post ) do |f| %>
+    <h3>Add a new Comment</h3>
+    <p>
+      <%= f.text_area :text %> <br><br>
+      <%= f.submit %>
+    </p>
   <% end %>
 </div>
