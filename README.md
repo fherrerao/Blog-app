@@ -47,6 +47,20 @@ Finally, use the following command to initialize the live server:
 rails s
 ```
 
+## Tests
+
+To execute the tests use the following command:
+
+```
+rspec spec
+```
+
+or
+
+```
+bundle exec rspec ./spec
+```
+
 ## Author
 
 👤 **Fernando Herrera**
