@@ -1,6 +1,15 @@
 <div class = 'container'>
   <h1>Add new post</h1>
-  <%= form_with(model: @post, url: user_posts_path) do |form|%>
+  <%= form_with(model: @post, url: user_posts_path, data: { turbo: false }) do |form|%>
+    
+    <% if @post.errors.any? %>
+      <% @post.errors.full_messages.each do |message| %>
+        <div role="alert">
+          <%= message %> 
+        </div>
+      <% end %>
+    <% end %>
+    
     <div class= 'border'>
       <%= form.label :title %> <br>
       <%= form.text_field :title, placeholder: 'Enter the title of the post' %>
@@ -12,7 +21,7 @@
     </div>
 
     <div>
-      <%= form.submit %>
+      <%= form.submit %>      
     </div>
   <% end %>
 </div>

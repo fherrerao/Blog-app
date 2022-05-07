@@ -1,8 +1,9 @@
  <div class = 'container'> 
+    <%= notice%>
     <h1>Post and comments of <%= @user.name%></h1> 
 
     <p class = 'border'> <%= @user.name%></p>
-
+    
     <% @post.each do |post| %>
       <div class = 'border'>
         <p> <%= post.text %> </p>

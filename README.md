@@ -47,6 +47,29 @@ Finally, use the following command to initialize the live server:
 rails s
 ```
 
+## Tests
+
+To run all tests use the following command:
+
+```
+rspec spec
+```
+
+or
+
+```
+bundle exec rspec ./spec
+```
+
+To generate test file for model use :
+```
+rails generate rspec:model user
+```
+For run test models tests use:
+```
+bundle exec rspec spec/models
+```
+
 ## Author
 
 👤 **Fernando Herrera**
