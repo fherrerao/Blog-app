@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-   describe 'validations' do
+  describe 'validations' do
     it 'Increases the number of comments by 1' do
       user = User.new(name: 'John', posts_counter: 0)
       user.save
@@ -13,6 +13,6 @@ RSpec.describe Comment, type: :model do
       comment.save
 
       expect(user.comments.count).to eq(1)
-   end
-  end      
+    end
+  end
 end

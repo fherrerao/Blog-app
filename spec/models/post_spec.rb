@@ -15,7 +15,7 @@ RSpec.describe Post, type: :model do
 
     it 'It should not be valid if the title is nil' do
       subject.title = nil
-      expect(subject).to_not be_valid      
+      expect(subject).to_not be_valid
     end
 
     it 'It should not be valid if the title is empty' do

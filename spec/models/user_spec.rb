@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
     it 'It should not be valid if the name is empty' do
       subject.name = ''
       expect(subject).to_not be_valid
-    end    
+    end
 
     it 'It should be valid if the posts_counter is 0' do
       expect(subject).to be_valid
@@ -40,7 +40,5 @@ RSpec.describe User, type: :model do
     it 'It should not be valid if the comments_counter is 0' do
       expect(subject).to be_valid
     end
-
-    
   end
 end
