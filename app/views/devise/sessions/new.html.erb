@@ -1,15 +1,15 @@
-<div>
+<div class = "d-flex-column align-items-center width-100">
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, html: { 'data-turbo': 'false' }, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_for(resource, as: resource_name, class: "width-100", html: { 'data-turbo': 'false' }, url: session_path(resource_name)) do |f| %>
+  <div class="field width-100">
+    <%= f.label :email %><br/>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "width-100 fields" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class: "width-100 fields" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -20,7 +20,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "width-100" %>
   </div>
 <% end %>
 
