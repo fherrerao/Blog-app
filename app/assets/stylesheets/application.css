@@ -78,7 +78,10 @@ h1 {
   width: 100%;
 }
 
-.fields {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
   border: none;
   border-bottom: 2px solid rgb(2, 2, 2);
   border-right: 2px solid rgb(2, 2, 2);

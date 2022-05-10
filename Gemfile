@@ -17,6 +17,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails', '~> 1.0.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'jquery-rails'
 
 gem 'rails-controller-testing'
 
