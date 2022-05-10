@@ -1,9 +1,13 @@
 <div class = 'container'>  
   <h1>Posts of <%= @posts.name %></h1>   
 
-  <button class= "button"><%=link_to "Add new post", new_user_post_path(@posts.id) %></button>
+  <button class= "button mb"><%=link_to "Add new post", new_user_post_path(@posts.id) %></button>  
   
-  <h3 class = 'border'> <%= @posts.name %> <br></h3>
+  <div class = 'd-grid align-items-center margin'>
+    <%= image_tag (@posts.photo), height: '120', width: '120' %>
+    <h3 class = 'border'> <%= @posts.name %> <br></h3>
+  </div>
+  
   <p class = 'border'> <span> Bio </span> <br> <%= @posts.bio %> </p>
 
   <% @user_posts.each do |post| %>    

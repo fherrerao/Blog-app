@@ -37,6 +37,11 @@ h1 {
   display: flex;
 }
 
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .d-grid {
   display: grid;
   grid-template-columns: 1fr 10fr;
@@ -51,8 +56,54 @@ h1 {
   justify-content: space-between;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
 .border {
   border: 1px solid #1e1e29;
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+.mb {
+  margin-bottom: 1rem;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.new_user {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid rgb(2, 2, 2);
+  border-right: 2px solid rgb(2, 2, 2);
+  margin-bottom: 1rem;
+  padding: 5px;
+  background-color: transparent;
+}
+
+input[type=submit] {
+  padding: 10px;
+  width: 100%;
+  margin: 1rem 0;
+  border: none;
+  border-bottom: 2px solid rgb(2, 2, 2);
+  border-right: 2px solid rgb(2, 2, 2);
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+}
+
+.links {
+  text-align: center;
+  margin-bottom: 5px;
 }

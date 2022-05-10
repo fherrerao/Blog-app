@@ -1,17 +1,23 @@
 <div class = 'container'>
+
   <h1>User List</h1>
+  <%
+=begin%>
+ <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <button> <%= link_to 'Sign in', new_user_session_path %> </button>   
+<%
+=end%>
   <% @users.each do |user|%>
-    <div class = 'd-grid'>
+    <div class = 'd-grid'>      
       <div class = 'border'>
-        <%= image_tag (user.photo) %>
-      </div>    
+        <%= image_tag (user.photo), height: '120', width: '120' %>
+      </div>
       <div class= 'd-flex align-items-center justify-content-between border'>
         <%= link_to user_path(user.id) do %>
         <h3> <%= user.name %> </h3>
         <% end %>
         <p> Number of posts:  <%= user.posts_counter %> </p>      
       </div>
-    </div>
-    
+    </div>    
   <% end %>
 </div>
