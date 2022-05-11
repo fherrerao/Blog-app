@@ -1,5 +1,6 @@
-<div class = 'container'>
-  <h1>Add new post</h1>
+<h1 class='text-center'>Add new post</h1>
+<div class = 'border'>
+  
   <%= form_with(model: @post, url: user_posts_path, data: { turbo: false }) do |form|%>
     
     <% if @post.errors.any? %>
@@ -10,12 +11,12 @@
       <% end %>
     <% end %>
     
-    <div class= 'border'>
+    <div class= 'p-3 '>
       <%= form.label :title %> <br>
       <%= form.text_field :title, placeholder: 'Enter the title of the post' %>
     </div>
 
-    <div class= 'border'>
+    <div class= 'p-3 '>
       <%= form.label :text %> <br>
       <%= form.text_area :text, placeholder: 'Enter the content of the post' %>
     </div>

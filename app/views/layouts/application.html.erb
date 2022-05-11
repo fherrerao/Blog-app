@@ -9,15 +9,18 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice alert-success my-3"><%= notice %></p>
+    <p class="alert-danger"><%= alert %></p>
     <% if user_signed_in?%>
-      <%= current_user.email%>
-      <%= link_to 'Log out' , destroy_user_session_path, method: :delete%>
-      <% end %>
+      <div class="d-flex justify-content-between">
+        User: <%= current_user.name%>
+        <%= button_to 'Log out' , destroy_user_session_path, method: :delete, class: "btn btn-info" %>
+      </div>      
+    <% end %>
     <%= yield %>
   </body>
 </html>
