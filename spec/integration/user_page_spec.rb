@@ -4,11 +4,11 @@ RSpec.describe 'User Page', type: :feature do
   describe 'User Page Index' do
     before :all do
       User.destroy_all
-      User.create(id: 1, name: 'User-1', photo: 'https://www.test.com/user-image-1.png', bio: 'some1', email: 'user1@example.com',
+      User.create(id: 1, name: 'User-1', photo: 'https://www.test.com/user-image-1.png', bio: 'some1', email: 'anotheruser1@example.com',
                   password: '123456', confirmed_at: DateTime.now, posts_counter: 12)
-      User.create(id: 2, name: 'User-2', photo: 'https://www.test.com/user-image-2.png', bio: 'some2', email: 'user2@example.com',
+      User.create(id: 2, name: 'User-2', photo: 'https://www.test.com/user-image-2.png', bio: 'some2', email: 'anotheruser2@example.com',
                   password: '123456', confirmed_at: DateTime.now, posts_counter: 13)
-      User.create(id: 3, name: 'User-3', photo: 'https://www.test.com/user-image-3.png', bio: 'some3', email: 'user3@example.com',
+      User.create(id: 3, name: 'User-3', photo: 'https://www.test.com/user-image-3.png', bio: 'some3', email: 'anotheruser3@example.com',
                   password: '123456', confirmed_at: DateTime.now, posts_counter: 15)
     end
 
