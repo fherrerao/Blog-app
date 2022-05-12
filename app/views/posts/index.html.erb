@@ -1,16 +1,17 @@
  <div class = 'container'> 
     <%= notice%>
-    <h1>Post and comments of <%= @user.name%></h1> 
-
-    <p class = 'border'> <%= @user.name%></p>
+    <h1 class='text-center my-5 text-uppercase'>Posts and comments of <%= @user.name%></h1> 
+    <div class='row my-5 align-items-center lead text-uppercase  '>
+      <%= image_tag (@user.photo), height: '120', width: '120', class: 'col-2' %>
+      <p class = 'border p-3 col-10 text-center'> <%= @user.name%></p>    
+    </div>
     
     <% @post.each do |post| %>
-      <div class = 'border'>
+      <div class = 'border p-3 my-2'>
         <p> <%= post.text %> </p>
-        <p> <% post.most_recent_comments.each do |comment| %> 
+         <% post.most_recent_comments.each do |comment| %> 
           <p> <%= @user.name%>: <%= comment.text %>  </p>
-        <% end %>
-        </p>
+        <% end %>        
       </div>   
       
     <% end %>

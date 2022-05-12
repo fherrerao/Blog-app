@@ -1,28 +1,29 @@
-<h1 class='text-center'>Add new post</h1>
-<div class = 'border'>
+<h2 class='text-center'>Add new post</h1>
+<div>
   
   <%= form_with(model: @post, url: user_posts_path, data: { turbo: false }) do |form|%>
-    
-    <% if @post.errors.any? %>
-      <% @post.errors.full_messages.each do |message| %>
-        <div role="alert">
-          <%= message %> 
+    <div class = 'd-flex flex-column justify-content-center align-items-center'> 
+        <% if @post.errors.any? %>
+          <% @post.errors.full_messages.each do |message| %>
+            <div role="alert">
+              <%= message %> 
+            </div>
+          <% end %>
+        <% end %>
+        
+        <div class= 'p-3 '>
+          <%= form.label :title %> <br>
+          <%= form.text_field :title, placeholder: 'Enter the title of the post', class: 'input-group-text' %>
+        </div>
+
+        <div class= 'p-3 '>
+          <%= form.label :text %> <br>
+          <%= form.text_area :text, placeholder: 'Enter the content of the post', class: 'input-group-text' %>
+        </div>
+
+        <div >
+          <%= form.submit 'Create Post', class: 'btn btn-secondary my-2' %>
         </div>
       <% end %>
-    <% end %>
-    
-    <div class= 'p-3 '>
-      <%= form.label :title %> <br>
-      <%= form.text_field :title, placeholder: 'Enter the title of the post' %>
     </div>
-
-    <div class= 'p-3 '>
-      <%= form.label :text %> <br>
-      <%= form.text_area :text, placeholder: 'Enter the content of the post' %>
-    </div>
-
-    <div>
-      <%= form.submit %>      
-    </div>
-  <% end %>
 </div>
