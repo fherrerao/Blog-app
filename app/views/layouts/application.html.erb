@@ -17,7 +17,7 @@
     <p class="alert-danger"><%= alert %></p>
     <% if user_signed_in?%>
       <div class="d-flex justify-content-between">
-        User: <%= current_user.name%>
+        <p class='lead'> User: <%= current_user.name%></p>
         <%= button_to 'Log out' , destroy_user_session_path, method: :delete, class: "btn btn-info" %>
       </div>      
     <% end %>
