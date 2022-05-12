@@ -19,7 +19,9 @@
       <div class="d-flex justify-content-between">
         <p class='lead'> User: <%= current_user.name%></p>
         <%= button_to 'Log out' , destroy_user_session_path, method: :delete, class: "btn btn-info" %>
-      </div>      
+      </div>
+    <% else %>
+      <%= link_to 'Join' , new_user_session_path, method: :get, class: "btn btn-info" %>        
     <% end %>
     <%= yield %>
   </body>

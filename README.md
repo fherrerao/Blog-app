@@ -70,6 +70,14 @@ For run test models tests use:
 bundle exec rspec spec/models
 ```
 
+run 
+
+chmod u+x bin/dev
+
+npm install
+
+./div/dev
+
 ## Author
 
 👤 **Fernando Herrera**
