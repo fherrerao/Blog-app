@@ -3,11 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'validations' do
     before(:each) do
-      @user = User.new(name: 'John', posts_counter: 0)
+      @user = User.new(name: 'John', posts_counter: 0, email: 'user@example.com',
+        password: '123456', confirmed_at: DateTime.now)
       @user.save
     end
 
-    subject { User.new(name: 'John', posts_counter: 0) }
+    subject { User.new(name: 'John', posts_counter: 0, email: 'subject@example.com',
+      password: '123456', confirmed_at: DateTime.now) }
 
     it 'It should be valid if the name is John' do
       expect(subject).to be_valid
