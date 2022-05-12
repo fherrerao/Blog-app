@@ -1,16 +1,21 @@
  <div class = 'container'> 
     <%= notice%>
     <h1 class='text-center my-5 text-uppercase'>Posts and comments of <%= @user.name%></h1> 
-    <div class='row my-5 align-items-center lead text-uppercase  '>
+    <div id= "User: <%= @user.id%>" class='row my-5 align-items-center lead text-uppercase  '>
       <%= image_tag (@user.photo), height: '120', width: '120', class: 'col-2' %>
-      <p class = 'border p-3 col-10 text-center'> <%= @user.name%></p>    
+      <p class = 'border p-3 col-10 text-center'> <%= @user.name%></p>
+      <p> Number of posts:  <%= @user.posts_counter %> </p>         
     </div>
     
     <% @post.each do |post| %>
-      <div class = 'border p-3 my-2'>
-        <p> <%= post.text %> </p>
+      <div id="Post: <%= post.id%>" class = 'border p-3 my-2'>
+        <p class = 'me-2'> Comments:  <%= post.comments_counter %> Likes: <%= post.likes_counter%> </p>
+        <p> <%= post.title %> </p>
+        <%= link_to user_post_path(post.author_id, post.id), id: "Post-link: #{post.id}" do %>
+          <%= truncate(post.text, :length => 150) %> </p>
+        <% end %>
          <% post.most_recent_comments.each do |comment| %> 
-          <p> <%= @user.name%>: <%= comment.text %>  </p>
+          <p> <%= @user.name%>: <%= comment.text %>  </p>          
         <% end %>        
       </div>   
       
