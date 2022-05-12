@@ -4,10 +4,11 @@
   <div class = 'border d-flex justify-content-between'>
     <div class='p-3'>
       <p class='lead'>Post #<%= @posts.id %> by: <%= @posts.author.name%> </p>
+      <p> <%= @posts.title%> </p>      
       <p> <%= @posts.text%> </p>      
     </div>    
     <div class='p-3'>      
-      <p> Likes: <%= @posts.likes_counter%></p>
+      <p class = 'me-2'> Comments:  <%= @posts.comments_counter %> Likes: <%= @posts.likes_counter%> </p>
       <% if user_signed_in?%>
         <%= form_with(model: Like.new, url: post_likes_path(@posts), method: :post ) do |f| %>    
           <%= f.submit "Like", class: 'btn btn-danger' %>    
@@ -17,7 +18,7 @@
   </div>  
   
   <% @user_posts.each do |post| %>    
-    <p class = 'border p-3 my-1'> <%= @posts.author.name%>:  <%= post.text %></p>
+    <p class = 'border p-3 my-1'> <%= post.author.name%>:  <%= post.text %></p>
   <% end %>
 
   <% if user_signed_in? %>

@@ -5,8 +5,9 @@ RSpec.describe 'User Show Page', type: :feature do
     before :all do
       Comment.destroy_all
       User.destroy_all
-      @user = User.create(id: 1, name: 'User-1', photo: 'https://www.test.com/user-image-1.png', bio: 'some1', email: 'anotheruser1@example.com',
-                          password: '123456', confirmed_at: DateTime.now, posts_counter: 0)
+      @user = User.create(id: 1, name: 'User-1', photo: 'https://www.test.com/user-image-1.png', bio: 'some1',
+                          email: 'anotheruser1@example.com', password: '123456', confirmed_at: DateTime.now,
+                          posts_counter: 0)
       (1..10).each do |i|
         post = Post.new(id: i, title: "title-#{i}", text: 'a' * 300, comments_counter: 0, likes_counter: 0)
         post.author = @user
