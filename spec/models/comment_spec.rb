@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   describe 'validations' do
     it 'Increases the number of comments by 1' do
-      user = User.new(name: 'John', posts_counter: 0, email: 'user@example.com',
+      user = User.new(name: 'John', posts_counter: 0, email: 'user4@example.com',
         password: '123456', confirmed_at: DateTime.now)
       user.save
 

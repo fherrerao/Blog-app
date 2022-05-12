@@ -3,9 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Login', type: :feature do
   describe 'New session page' do
     before :all do
-      User.destroy_all
       User.create(name: 'name', photo: 'https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png',
-        bio: 'some', email: 'user@example.com', password: '123456', confirmed_at: DateTime.now, posts_counter: 0)
+        bio: 'some', email: 'anotheruser@example.com', password: '123456', confirmed_at: DateTime.now, posts_counter: 0)
     end
 
     before :each do
