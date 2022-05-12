@@ -44,7 +44,19 @@ rake db:create
 Finally, use the following command to initialize the live server:
 
 ```
-rails s
+./div/dev
+```
+
+`Note:` 
+If you need root permissions execute:
+
+```
+chmod u+x bin/dev
+```
+
+And then install the node dependencies with: 
+```
+npm install
 ```
 
 ## Tests
