@@ -21,7 +21,7 @@
         <%= button_to 'Log out' , destroy_user_session_path, method: :delete, class: "btn btn-info" %>
       </div>
     <% else %>
-      <%= link_to 'Join' , new_user_session_path, method: :get, class: "btn btn-info" %>        
+      <%= link_to 'Log in' , new_user_session_path, method: :get, class: "btn btn-info" %>        
     <% end %>
     <%= yield %>
   </body>

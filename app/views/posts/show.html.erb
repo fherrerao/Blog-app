@@ -1,11 +1,16 @@
 <div class = ''>
-  <h1 class='text-uppercase text-center my-4'>Comments to <%= @posts.author.name%>'s post </h1>
-  <%= notice%>
+  <h1 class='text-uppercase text-center my-4'>Comments to <%= @posts.author.name%>'s post </h1>  
   <div class = 'border d-flex justify-content-between'>
     <div class='p-3'>
       <p class='lead'>Post #<%= @posts.id %> by: <%= @posts.author.name%> </p>
-      <p> <%= @posts.title%> </p>      
-      <p> <%= @posts.text%> </p>      
+      <div class="row">
+        <p class="col-5">Title: </p>
+        <p class="col-7"> <%= @posts.title%> </p>
+      </div>
+      <div class="row">
+        <p class="col-5">Post: </p>
+        <p class="col-7"> <%= @posts.text%> </p>
+      </div>      
     </div>    
     <div class='p-3'>      
       <p class = 'me-2'> Comments:  <%= @posts.comments_counter %> Likes: <%= @posts.likes_counter%> </p>
@@ -17,9 +22,13 @@
     </div>    
   </div>  
   
-  <% @user_posts.each do |post| %>    
-    <p class = 'border p-3 my-1'> <%= post.author.name%>:  <%= post.text %></p>
-  <% end %>
+  
+  <h3>Comments:</h3>
+  <div class="bg-light"> 
+    <% @user_posts.each do |post| %>    
+      <p class = 'border p-3 my-1'> <%= post.author.name%>:  <%= post.text %></p>
+    <% end %>
+  </div>
 
   <% if user_signed_in? %>
     <%= link_to 'Add comment', new_post_comment_path(@posts), class: 'btn btn-secondary my-3'%>  

@@ -14,11 +14,10 @@
   <% @user_posts.each do |post| %>    
     <div class = 'border d-flex justify-content-between align-items-center post'> 
       <div class = 'p-3'>
-        <p class='lead'> <%= post.title %></p>
-        
+        <p class='lead'> <%= post.title %></p>        
         <p class='lead'> <%= @posts.name %>:  
-        <%= link_to user_post_path(post.author_id, post.id), id: "Post: #{post.id}" do %>
-          <%= truncate(post.text, :length => 150) %> </p>
+        <%= link_to user_post_path(post.author_id, post.id), id: "Post: #{post.id}", class: 'text-decoration-none' do %>
+          <%= truncate(post.text, :length => 150) %> </p>          
         <% end %>        
       </div>      
       <p class = 'me-2'> Comments:  <%= post.comments_counter %> Likes: <%= post.likes_counter%> </p>
