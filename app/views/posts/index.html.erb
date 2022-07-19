@@ -1,7 +1,11 @@
  <div class = 'container'>     
     <h1 class='text-center my-5 text-uppercase'>Posts and comments of <%= @user.name%></h1> 
     <div id= "User: <%= @user.id%>" class='row my-5 align-items-center lead text-uppercase  '>
-      <%= image_tag (@user.photo), height: '120', width: '120', class: 'col-2' %>
+      <%
+=begin%>
+ <%= image_tag (@user.photo), height: '120', width: '120', class: 'col-2' %> 
+<%
+=end%>
       <p class = 'border p-3 col-10 text-center'> <%= @user.name%></p>
     </div>
     <p> Number of posts:  <%= @user.posts_counter %> </p>         
