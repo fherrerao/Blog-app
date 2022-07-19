@@ -1,35 +1,44 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# describe 'UsersController', type: :request do
-#   describe 'Index action' do
-#     before(:example) { get user_posts_path(1) }
+describe 'UsersController', type: :request do
+  describe 'Index action' do
+    before :all do
+      @user = User.create(name: 'user', email: 'abc@abc.com', bio: 'ecuatoriano', photo: 'photo.jpg', posts_counter:0)
+      @user.save
 
-#     it 'returns a 200 status code' do
-#       expect(response).to have_http_status(200)
-#     end
+      @post = Post.create(title: 'post', text: 'text', author_id: @user.id, comments_counter:0, likes_counter:0)
+      @post.save    
+    end
 
-#     it 'render the index template' do
-#       expect(response).to render_template('index')
-#     end
+    it 'returns a 200 status code' do
+      get '/'
+      expect(response).to have_http_status(200)
+    end
 
-#     it 'body should contain the title of the post' do
-#       expect(response.body).to include('Here is a list of posts for a given user')
-#     end
-#   end
+    it 'render the index template' do
+      get '/'
+      expect(response).to render_template(:index)
+    end
 
-#   describe 'Show action' do
-#     before(:example) { get user_post_path(1, 1) }
+    it 'body should contain the title of the post' do
+      get '/users'
+      expect(response.body).to include('user')
+    end
+  end
 
-#     it 'returns a 200 status code' do
-#       expect(response).to have_http_status(200)
-#     end
+  describe 'Show action' do   
 
-#     it 'render the show template' do
-#       expect(response).to render_template('show')
-#     end
+    it 'returns a 200 status code' do
+      get '/users/2'
+      expect(response).to have_http_status(200)
+    end
 
-#     it 'body should contain the title of the post' do
-#       expect(response.body).to include('Here is a post given a user')
-#     end
-#   end
-# end
+    it 'render the show template' do
+      expect(response).to render_template('show')
+    end
+
+    it 'body should contain the title of the post' do
+      expect(response.body).to include('Here is a post given a user')
+    end
+  end
+end
