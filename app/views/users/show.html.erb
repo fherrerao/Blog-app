@@ -4,7 +4,11 @@
   <%=link_to "Add new post", new_user_post_path(@posts.id), class: 'btn btn-secondary' %>
   
   <div  id="User: <%= @posts.id %>" class = 'row align-items-center my-3'>
-    <%= image_tag (@posts.photo), height: '120', width: '120', class: 'col-2' %>
+    <%
+=begin%>
+ <%= image_tag (@posts.photo), height: '120', width: '120', class: 'col-2' %> 
+<%
+=end%>
     <h3 class = 'border col-10 lead text-uppercase p-3 text-center'> <%= @posts.name %> <br></h3>
     <p> Number of posts:  <%= @posts.posts_counter %> </p>  
   </div>
