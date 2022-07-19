@@ -3,7 +3,11 @@
   <% @users.each do |user|%>
     <%= link_to user_path(user.id), id: user.id, class: 'text-decoration-none text-dark hover-zoom' do %>
     <div id= "User: <%= user.id%>" class = 'border p-4 my-2 row bg-light'>      
-      <%= image_tag (user.photo), height: '120', width: '120', class: 'col-md-2' %>     
+      <%
+=begin%>
+ <%= image_tag (user.photo), height: '120', width: '120', class: 'col-md-2' %>      
+<%
+=end%>
       <div class= 'd-flex align-items-center border justify-content-between col-md-10'>        
           <h3 class = "text-center"> <%= user.name %> </h3>        
         <p> Number of posts:  <%= user.posts_counter %> </p>      
